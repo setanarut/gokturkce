@@ -279,6 +279,8 @@ func tersYaz(s, t string) {
 	fmt.Println(string(r) + " - " + t)
 }
 
+// TersÇevir verilen stringi tersine çevirir
+// Bu fonksiyon, verilen stringin karakterlerini ters sırada döndürür.
 func TersÇevir(s string) string {
 	r := []rune(s)
 	slices.Reverse(r)
@@ -319,7 +321,8 @@ func TR2GTR(s string, verbose bool) string {
 		sonuç = append(sonuç, sözcük)
 
 		if verbose {
-			tersYaz(sözcük, temp)
+			// tersYaz(sözcük, temp)
+			fmt.Println(sözcük + " - " + temp)
 		}
 	}
 
