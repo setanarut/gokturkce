@@ -8,7 +8,12 @@ import (
 	"fmt"
 	"slices"
 	"strings"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
+
+var trLower = cases.Lower(language.Turkish)
 
 const (
 	kalınSesliler = "aıuo"
@@ -288,7 +293,7 @@ func TersÇevir(s string) string {
 }
 
 func TR2GTR(s string, verbose bool) string {
-	s = strings.ToLower(s)
+	s = trLower.String(s)
 	s = noktalamaTemizle.Replace(s)
 	sözcükler := strings.Fields(s)
 	sonuç := make([]string, 0, len(sözcükler))
